@@ -1,5 +1,5 @@
 import 'package:expense_tracker_app/widgets/expense_card.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 import 'model/expense_model.dart';
 
@@ -15,6 +15,10 @@ class ExpenseList extends StatelessWidget{
       itemCount: expenses.length,
       itemBuilder: (context, index) => Dismissible(
           key: ValueKey(expenses[index]),
+          background: Container(
+            color: Colors.redAccent,
+            margin: const EdgeInsets.symmetric(vertical: 8),
+          ),
           onDismissed: (direction){
             onRemoveExpense(expenses[index]);
           },
